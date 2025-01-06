@@ -21,7 +21,7 @@ export CGO_CXXFLAGS_ALLOW = -mfma|-mf16c
 export HIP_PLATFORM = amd
 export CGO_ENABLED=1
 
-BUILD_DIR = ./llama/build/$(OS)-$(ARCH)
+BUILD_DIR = ./build/runners/$(OS)-$(ARCH)
 DIST_BASE = ./dist/$(OS)-$(ARCH)
 
 ifeq ($(OS),windows)

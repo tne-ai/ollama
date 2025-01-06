@@ -3,7 +3,7 @@ package runner
 import (
 	"errors"
 
-	"github.com/ollama/ollama/llama/runner/newrunner"
+	"github.com/ollama/ollama/runner/newrunner"
 )
 
 func Execute(args []string) error {

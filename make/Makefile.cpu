@@ -17,12 +17,12 @@ cpu: $(BUILD_RUNNERS)
 dist: $(DIST_RUNNERS)
 
 $(RUNNERS_BUILD_DIR)/cpu_avx/ollama_llama_server$(EXE_EXT): TARGET_CPU_FLAGS="avx"
-$(RUNNERS_BUILD_DIR)/cpu_avx/ollama_llama_server$(EXE_EXT): ./llama/*.go ./llama/runner/*.go $(COMMON_SRCS) $(COMMON_HDRS)
+$(RUNNERS_BUILD_DIR)/cpu_avx/ollama_llama_server$(EXE_EXT): ./llama/*.go ./runner/*.go $(COMMON_SRCS) $(COMMON_HDRS)
 	@-mkdir -p $(dir $@)
 	GOARCH=$(ARCH) go build -buildmode=pie $(CPU_GOFLAGS) -trimpath -tags $(subst $(space),$(comma),$(TARGET_CPU_FLAGS)) -o $@ ./cmd/runner
 
 $(RUNNERS_BUILD_DIR)/cpu_avx2/ollama_llama_server$(EXE_EXT): TARGET_CPU_FLAGS="avx avx2"
-$(RUNNERS_BUILD_DIR)/cpu_avx2/ollama_llama_server$(EXE_EXT): ./llama/*.go ./llama/runner/*.go $(COMMON_SRCS) $(COMMON_HDRS)
+$(RUNNERS_BUILD_DIR)/cpu_avx2/ollama_llama_server$(EXE_EXT): ./llama/*.go ./runner/*.go $(COMMON_SRCS) $(COMMON_HDRS)
 	@-mkdir -p $(dir $@)
 	GOARCH=$(ARCH) go build -buildmode=pie $(CPU_GOFLAGS) -trimpath -tags $(subst $(space),$(comma),$(TARGET_CPU_FLAGS)) -o $@ ./cmd/runner
 

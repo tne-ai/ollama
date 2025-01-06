@@ -24,7 +24,7 @@ import (
 
 	"github.com/ollama/ollama/api"
 	"github.com/ollama/ollama/llama"
-	"github.com/ollama/ollama/llama/runner/common"
+	"github.com/ollama/ollama/runner/common"
 )
 
 // input is an element of the prompt to process, either

@@ -24,8 +24,8 @@ import (
 	"golang.org/x/sync/semaphore"
 
 	"github.com/ollama/ollama/api"
-	"github.com/ollama/ollama/llama/runner/common"
 	"github.com/ollama/ollama/model"
+	"github.com/ollama/ollama/runner/common"
 	"github.com/ollama/ollama/sample"
 
 	_ "github.com/ollama/ollama/model/llama"
