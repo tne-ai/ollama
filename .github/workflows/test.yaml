@@ -331,13 +331,12 @@ jobs:
       - run: go test ./...
 
   patches:
-    needs: [changes]
-    if: ${{ needs.changes.outputs.RUNNERS == 'True' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          submodules: recursive
-      - name: Verify patches carry all the changes
+      - name: Verify changes carries all patches
         run: |
-          make apply-patches sync && git diff --compact-summary --exit-code llama
+          make -f Makefile2 clean checkout sync
+          git diff --compact-summary --exit-code
+        env:
+          EMAIL: '<>'
