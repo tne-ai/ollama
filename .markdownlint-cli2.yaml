@@ -1,0 +1,22 @@
+# markdownlint-cli2 configuration
+# Installed to $HOME/.markdownlint-cli2.yaml by install-markdown.sh
+# Repos inherit this via Makefile `make install` which copies to repo root.
+#
+# markdownlint-cli2 uses this file (not .markdownlint.yaml) when invoked
+# as `markdownlint-cli2` or via pre-commit hooks.
+#
+# References the markdownlint rules from .markdownlint.yaml
+
+config:
+  # MD013: Line length — tables, headings, and code blocks can't be wrapped
+  MD013:
+    line_length: 120
+    tables: false
+    headings: false
+    code_blocks: false
+
+  # MD034: Bare URLs — allow email addresses
+  MD034: false
+
+  # MD060: Table column style — prettier controls formatting
+  MD060: false
